@@ -1,0 +1,31 @@
+#signup{
+    border:1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #signform{
+        display: flex;
+        flex-direction: column;;
+        width:30%;
+        input{
+           margin-bottom:5%;
+           border:none;
+        }
+        #create{
+            background-color: white;
+            font-size: 1.2rem;
+            font-weight: 510;
+            letter-spacing: 3;
+            font-weight:510;
+            text-transform: capitalize;
+            width:fit-content;
+            margin-top:5%;
+            margin-left: 50%;
+        }
+        #create:hover{
+            color:grey;
+            border-bottom: 3px dashed grey;
+        }
+    }
+}

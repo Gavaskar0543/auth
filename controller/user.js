@@ -60,3 +60,10 @@ module.exports.reset = function(req,res){
         title : 'reset passowrd'
     })
 }
+
+//reset password
+module.exports.resetpassword = function(req,res){
+   
+   
+   return res.end('<h1>check your mail Box </h1>');
+}

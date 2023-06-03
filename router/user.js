@@ -6,5 +6,5 @@ router.get('/signin',usercontroller.signin);
 router.post('/create',usercontroller.create);
 router.post('/create-session',usercontroller.createSession);
 router.get('/reset',usercontroller.reset);
-
+router.get('/reset-password',usercontroller.resetpassword);
 module.exports = router;

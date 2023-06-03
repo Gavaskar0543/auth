@@ -1,0 +1,30 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#home{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #home-btns{
+       
+      button{
+        border:none;
+        text-transform:capitalize;
+        background-color: white;
+        a{
+            
+            color:black;
+            font-size:1.2rem;
+            font-weight: 500;
+            letter-spacing: 1;
+            text-decoration: none;
+        }
+        a:hover{
+            color:grey;
+            border-bottom:3px dashed grey;
+        }
+      }
+    }
+}
