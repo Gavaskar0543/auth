@@ -17,6 +17,7 @@ async function(req, email, password, done) {
         
         if (!user || user.password !== password) {
             console.log('error', 'Invalid Username/Password');
+            req.flash('error','Invalid Username/Password')
             return done(null, false);
         }
 

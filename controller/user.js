@@ -20,6 +20,7 @@ module.exports.newhomie = function(req,res){
 module.exports.createNewUser = async function(req, res) {
     if (req.body.password != req.body.Cpassword) {
       console.log('Password and confirm password do not match');
+      req.flash('error','Password & Conforim password mismatch');
       return res.redirect('back');
     }
   
@@ -31,6 +32,7 @@ module.exports.createNewUser = async function(req, res) {
         return res.redirect('/');
       } else {
         console.log('Error in creating user');
+        req.flash('success','User Created Successfully')
         return res.redirect('back');
       }
     } catch (error) {
@@ -39,7 +41,20 @@ module.exports.createNewUser = async function(req, res) {
     }
   };
   module.exports.createSession = function(req, res) {
+    req.flash('success','Logged in Successfully');
    return res.redirect('/');
+    
   };
   
-  
+  module.exports.destroySession = function(req, res){
+    req.logout(function(err) {
+        if (err) {
+          console.log('Error logging out:', err);
+          return;
+        }
+        
+        // Perform any necessary operations after logout
+       req.flash('success','You Logged Out!');
+        return res.redirect('/');
+      });
+}
