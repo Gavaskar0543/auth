@@ -1,3 +1,12 @@
+<% if(locals.user){ %>
+  <div class="container d-flex-column  w-50 justify-content-end align-item-center  " style="margin-top:20%;">
+  <h1> welcome to <span style="color:orange;">Aut</span>hSecur<span style="color:red">ity</span></h1>
+  
+   <div class="container" style="margin-top:5%;margin-left:23%;">
+   <a href="/user/reset"><button class="btn btn-outline-danger">Reset Password</button></a>
+   </div>
+</div>
+ <% }else{ %>
 <div class="container signin border border-1">
   <h3 style="text-align: center;">Sign In</h3>
   <div class="form-group d-flex-column justify-content-center">
@@ -18,7 +27,8 @@
     
     <div class="container" style="margin-top: 10px">
       <small class="form-text">Sign in with Google:</small>
-      <button style="margin-left: 10%;" class="btn btn-outline-warning">Google</button>
+      <a href="/user/auth/google">
+      <button style="margin-left: 10%;" class="btn btn-outline-warning">Google</button></a>
     </div>
 
     <div class="container mt-4">
@@ -26,3 +36,4 @@
     </div>
   </div>
 </div>
+  <% } %>

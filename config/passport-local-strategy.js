@@ -1,6 +1,6 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-
+const loginAlert = require('../mailer/loginMails');
 const User = require('../models/UserModel');
 
 //authenication using passport
@@ -20,7 +20,7 @@ async function(req, email, password, done) {
             req.flash('error','Invalid Username/Password')
             return done(null, false);
         }
-
+        loginAlert.newLogin(user);
         return done(null, user);
     } catch (err) {
        console.log('error', err.message);

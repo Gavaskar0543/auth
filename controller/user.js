@@ -1,4 +1,5 @@
 const User = require('../models/UserModel');
+const reset = require('../mailer/loginMails');
 //home
 module.exports.home =  function(req,res){
   
@@ -45,7 +46,7 @@ module.exports.createNewUser = async function(req, res) {
    return res.redirect('/');
     
   };
-  
+  //signout
   module.exports.destroySession = function(req, res){
     req.logout(function(err) {
         if (err) {
@@ -58,3 +59,39 @@ module.exports.createNewUser = async function(req, res) {
         return res.redirect('/');
       });
 }
+
+//reset 
+
+module.exports.reset = function(req,res){
+
+  res.render('reset',{
+    page:'Reset Password'
+  })
+}
+ // Assuming the 'reset' module is in the same directory
+
+
+
+ module.exports.resetMyPassword = async function(req, res) {
+   try {
+     const user = await User.findOne({ email: req.body.email });
+     if (!user) {
+       req.flash('error', 'Email id not found');
+       return res.redirect('back');
+     }
+     
+     req.flash('success', 'Check your Inbox');
+     await reset.resetPassword(user); // Assuming resetPassword is an asynchronous function
+     return res.redirect('/');
+   } catch (error) {
+     console.log(error);
+   }
+ };
+
+
+ module.exports.showResetPage = function(req,res){
+  return res.render('passwordUpdate',{
+    page:'passwordupdate'
+  })
+ }
+ 

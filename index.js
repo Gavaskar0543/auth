@@ -1,19 +1,23 @@
 const express = require('express');
+const cookies = require('cookie-parser');
 const port = 8000;
 const app = express();
 //EXPRESS EJS LAYOUTS
 const expressLayout = require('express-ejs-layouts');
-const cookies = require('cookie-parser');
-app.use(cookies());
-//middleware
-app.use(express.urlencoded());
+//database
+const db = require('./config/mongoose');
+
 const session = require('express-session');
 const passport = require('passport');
 const localStrategy = require('./config/passport-local-strategy');
+const googleStrategy = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
 app.use(expressLayout);
+app.use(cookies());
+//middleware
+app.use(express.urlencoded());
 //VIEW
 app.set('view engine','ejs');
 app.set('views','views');
@@ -58,8 +62,7 @@ app.set("layout extractStyles", true)
 app.set("layout extractScripts", true)
 // Corrected static assets setup
 app.use(express.static( 'assets'));
-//database
-const db = require('./config/mongoose');
+
 //router
 app.use('/',require('./router'));
 app.listen(port , function(err){

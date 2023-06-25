@@ -1,6 +1,7 @@
+
 <div class="container signin border border-1 ">
     <h3 style="text-align: center;">Sign Up</h3>
-    <div class="form-group d-flex justify-content-center">
+    <div class="form-group d-flex-column justify-content-center">
      <form method="post" action="/user/create">
       <label for="eamillabel">Email address</label>
       <input type="email" name="email" class="form-control w-75"  id="emaillabel"> 
@@ -16,13 +17,13 @@
       <input type="password" class="form-control w-75" id="Cpassword" name="Cpassword"  required>
       <br>
     <button class="btn btn-outline-success">Create New</button>
-    <div class="container">
-      <samll>
-        signup  with google<button class="m-2 btn btn-outline-primary">Google</button>
-      </samll>
-    </div>
+   
     
   </form>
-  
+  <div class="container">
+    <samll>
+      signup  with google <a href="/user/auth/google"> <button class="m-2 btn btn-outline-primary">Google</button></a>
+    </samll>
+  </div>
     </div>
  </div>
