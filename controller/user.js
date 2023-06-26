@@ -1,5 +1,6 @@
 const User = require('../models/UserModel');
 const reset = require('../mailer/loginMails');
+let manId;
 //home
 module.exports.home =  function(req,res){
   
@@ -90,8 +91,26 @@ module.exports.reset = function(req,res){
 
 
  module.exports.showResetPage = function(req,res){
+  const id = req.query.id
+  manId = id;
   return res.render('passwordUpdate',{
     page:'passwordupdate'
   })
  }
- 
+ module.exports.setpassword = async function(req,res){
+  
+  if(req.body.newPassword != req.body.confirmPassword){
+    console.log('password mismatch');
+    req.flash('error','password mismatch');
+    return res.redirect('back');
+  }
+
+  try{
+  const user = await User.findByIdAndUpdate(manId, { password: req.body.newPassword }, { new: true });
+  req.flash('success','password update successfull');
+  return res.redirect('/');
+  }
+  catch(error){
+    console.log(error);
+  }
+ }

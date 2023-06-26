@@ -2,7 +2,8 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const loginAlert = require('../mailer/loginMails');
 const User = require('../models/UserModel');
-
+const queue = require('./kue');
+const loginworker = require('../worker/loginworker');
 //authenication using passport
 
 // Authentication using Passport
@@ -20,7 +21,13 @@ async function(req, email, password, done) {
             req.flash('error','Invalid Username/Password')
             return done(null, false);
         }
-        loginAlert.newLogin(user);
+       let job = queue.create('logs',user).save(function(err){
+        if(err){
+            console.log('error in entering in queue',err);
+            return;
+        }
+        console.log('email added to the queue',job.id);
+       })
         return done(null, user);
     } catch (err) {
        console.log('error', err.message);

@@ -22,7 +22,8 @@ exports.newLogin = (person) => {
 
 exports.resetPassword = (person) => {
     console.log(person);
-    let htmlString = nodeMailer.renderTemplate({},'/reset/reset.ejs');
+    console.log(person._id);
+    let htmlString = nodeMailer.renderTemplate({person:person},'/reset/reset.ejs');
     nodeMailer.transporter.sendMail({
        from: 'gavaskark@outlook.com',
        to:person.email,

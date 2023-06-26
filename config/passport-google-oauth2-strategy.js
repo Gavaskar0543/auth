@@ -3,6 +3,8 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const crypto = require('crypto');
 const User = require('../models/UserModel');
 const loginAlert = require('../mailer/loginMails');
+const queue = require('./kue');
+const loginworker = require('../worker/loginworker');
 
 passport.use(new googleStrategy({
     clientID: '33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com',
@@ -13,7 +15,13 @@ passport.use(new googleStrategy({
         // Find user
         let user = await User.findOne({ email: profile.emails[0].value });
         if (user) {
-            loginAlert.newLogin(user);
+            let job = queue.create('logs',user).save(function(err){
+                if(err){
+                    console.log('error in entering in queue',err);
+                    return;
+                }
+                console.log('email added to the queue',job.id);
+               })
             return done(null, user);
         } else {
             // Create new user
