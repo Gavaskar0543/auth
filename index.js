@@ -2,10 +2,12 @@ const express = require('express');
 const cookies = require('cookie-parser');
 const port = 8000;
 const app = express();
+//helper
+require('./config/viewHelper')(app);
 //env 
 const env = require('./config/environment')
 const logger = require('morgan');
-
+console.log(env.db, 'database');
 //EXPRESS EJS LAYOUTS
 const expressLayout = require('express-ejs-layouts');
 //database

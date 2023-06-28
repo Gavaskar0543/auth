@@ -20,3 +20,44 @@
 [0mGET /user/auth/google [36m302[0m 2.968 ms - 0[0m
 [0mGET /user/auth/google/callback?code=4%2F0AbUR2VN-SFWFBdox8DnNEL-5KZ0BqxRDyov6lyvVhMZab1ZxXevuBHmqXoRJTRFEpGWsRg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none [36m302[0m 788.733 ms - 46[0m
 [0mGET / [32m200[0m 13.774 ms - 2274[0m
+[0mGET / [32m200[0m 183.694 ms - 2865[0m
+[0mGET /scss/signin.css [33m404[0m 10.816 ms - 154[0m
+[0mGET /scss/header.css [33m404[0m 6.914 ms - 154[0m
+[0mGET /favicon.ico [33m404[0m 1.894 ms - 150[0m
+[0mGET / [32m200[0m 19.520 ms - 2863[0m
+::1 - - [28/Jun/2023:17:06:19 +0000] "GET / HTTP/1.1" 200 2865 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:06:22 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:09:37 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:09:41 +0000] "GET /user/auth/google HTTP/1.1" 302 0 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:10:56 +0000] "GET /signup HTTP/1.1" 200 2890 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:16 +0000] "POST /user/create HTTP/1.1" 302 100 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:16 +0000] "GET /signup HTTP/1.1" 304 - "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:37 +0000] "POST /user/create HTTP/1.1" 302 100 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:37 +0000] "GET /signup HTTP/1.1" 200 3157 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:46 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:56 +0000] "POST /user/create-session HTTP/1.1" 302 58 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:11:56 +0000] "GET /signup HTTP/1.1" 200 3155 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:05 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:16 +0000] "POST /user/create-session HTTP/1.1" 302 58 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:16 +0000] "GET /signup HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:46 +0000] "POST /user/create HTTP/1.1" 302 46 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:46 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:57 +0000] "POST /user/create-session HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:12:57 +0000] "GET / HTTP/1.1" 200 2282 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:13:01 +0000] "GET /user/reset HTTP/1.1" 200 2308 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:13:08 +0000] "POST /user/passwordReset HTTP/1.1" 302 46 "http://localhost:8000/user/reset" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:13:08 +0000] "GET / HTTP/1.1" 200 2276 "http://localhost:8000/user/reset" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:15:03 +0000] "GET /user/reset/password?id=649c6a0e6d7f17749c778dc8 HTTP/1.1" 200 2461 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:15:31 +0000] "POST /user/reset/update HTTP/1.1" 302 46 "http://localhost:8000/user/reset/password?id=649c6a0e6d7f17749c778dc8" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:15:31 +0000] "GET / HTTP/1.1" 200 2287 "http://localhost:8000/user/reset/password?id=649c6a0e6d7f17749c778dc8" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:15:35 +0000] "GET /user/sign-out HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:15:35 +0000] "GET / HTTP/1.1" 200 3122 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:03 +0000] "POST /user/create-session HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:03 +0000] "GET / HTTP/1.1" 200 2282 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:09 +0000] "GET /user/sign-out HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:09 +0000] "GET / HTTP/1.1" 200 3122 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:19 +0000] "POST /user/create-session HTTP/1.1" 302 58 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:19 +0000] "GET /signup HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:23 +0000] "GET / HTTP/1.1" 200 2865 "http://localhost:8000/signup" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:35 +0000] "POST /user/create-session HTTP/1.1" 302 46 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2023:17:16:35 +0000] "GET / HTTP/1.1" 200 2282 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"

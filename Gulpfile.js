@@ -19,7 +19,7 @@ gulp.task('css', async function () {
       .pipe(cssnano())
       .pipe(gulp.dest('./assets.css'))
       .pipe(rev.default())
-      .pipe(gulp.dest('./public/assets/css'))
+      .pipe(gulp.dest('./public/assets'))
       .pipe(rev.default.manifest({
         cwd: './public',
         merge: true
