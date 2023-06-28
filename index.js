@@ -68,7 +68,7 @@ app.set("layout extractScripts", true)
 // Corrected static assets setup
 app.use(express.static( 'assets'));
 //logger use
-app.use(logger(env.morgan.mode,env.morgan.option));
+app.use(logger(env.morgan.mode,env.morgan.options));
 //router
 app.use('/',require('./router'));
 app.listen(port , function(err){

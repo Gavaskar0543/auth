@@ -1,14 +1,22 @@
 const path = require('path');
 const rfs = require('rotating-file-stream');
 const fs = require('fs');
-//setup logDirectory
-const logDirectory = path.join(__dirname,'../production_logs/');
+
+// Setup logDirectory
+const logDirectory = path.join(__dirname, '../production_logs/');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
-const accesslogStream = rfs.createStream('file.log',{
-    interval:'1d',
-    path:logDirectory
-})
+// Create a rotating file stream for logging
+const accesslogStream = rfs.createStream('file.log', {
+  interval: '1d',
+  path: logDirectory
+});
+
+// Check for errors during stream creation
+accesslogStream.on('error', function(err) {
+  console.error('Error creating rotating file stream:', err);
+});
+
 const development = {
     name: 'development',
     assets_path: '/assets',
