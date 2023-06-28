@@ -5,11 +5,11 @@ const User = require('../models/UserModel');
 const loginAlert = require('../mailer/loginMails');
 const queue = require('./kue');
 const loginworker = require('../worker/loginworker');
-
+const env = require('./environment');
 passport.use(new googleStrategy({
-    clientID: '33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com',
-    clientSecret: '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',
-    callbackURL: 'http://localhost:8000/user/auth/google/callback'
+    clientID: env.clientID,
+    clientSecret: env.clientSecret,
+    callbackURL: env.callbackURL,
 }, async (accessToken, refreshToken, profile, done) => {
     try {
         // Find user

@@ -2,6 +2,10 @@ const express = require('express');
 const cookies = require('cookie-parser');
 const port = 8000;
 const app = express();
+//env 
+const env = require('./config/environment')
+const logger = require('morgan');
+
 //EXPRESS EJS LAYOUTS
 const expressLayout = require('express-ejs-layouts');
 //database
@@ -14,6 +18,7 @@ const googleStrategy = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/middleware');
+const path = require('path');
 app.use(expressLayout);
 app.use(cookies());
 //middleware
@@ -25,7 +30,7 @@ app.set('views','views');
 //express session
 app.use(session({
     name:'authUser',
-    secret:"charnyaMeraJan",
+    secret:env.secretKey,
     saveUninitialized:false,
     resave : false,
     cookie : {
@@ -48,8 +53,8 @@ const sassMiddleware = require('node-sass-middleware');
 
 app.use(
   sassMiddleware({
-    src : './assets/scss',
-    dest : './assets/css',
+    src : path.join(__dirname,env.assets_path,'scss'),
+    dest : path.join(__dirname,env.assets_path,'css'),
     debug:true,
     outputStyle:'expanded',
     prefix:'/css'
@@ -62,7 +67,8 @@ app.set("layout extractStyles", true)
 app.set("layout extractScripts", true)
 // Corrected static assets setup
 app.use(express.static( 'assets'));
-
+//logger use
+app.use(logger(env.morgan.mode,env.morgan.option));
 //router
 app.use('/',require('./router'));
 app.listen(port , function(err){
