@@ -34,7 +34,7 @@ const development = {
     },
     clientID: '33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: 'http://localhost:8000/user/auth/google/callback',
+    callbackURL: 'http://gavaskar.authsec.ninja/user/auth/google/callback',
     morgan:{
         mode:'dev',
         options:{
@@ -58,9 +58,9 @@ const production = {
             pass: process.env.EMAILPASS // Replace with your Outlook email account password
         }
     },
-    google_client_id:process.env.GOOGLE_CLIENT,
-    google_secret:process.env.GOOGLE_SECRET ,
-    google_callback:process.env.GOOGLE_CALLBACK,
+    clientID:process.env.GOOGLE_CLIENT,
+    clientSecret:process.env.GOOGLE_SECRET ,
+    callbackURL:process.env.GOOGLE_CALLBACK,
     morgan:{
         mode:'combined',
         options:{
@@ -69,4 +69,14 @@ const production = {
     }
     
 };
+/*
+export Auth_ENVIRONMENT="production"
+export ASSET_PATH="./public/assets"
+export SECRETKEY="hackmygirlsheartyoubro"
+export DATABASE="auth_production"
+export EMAIL="gavaskark@outlook.com"
+export EMAILPASS="Gava050220#"
+export GOOGLE_CLIENT="33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com"
+export GOOGLE_SECRET="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"
+export GOOGLE_CALLBACK="http://localhost:8000/user/auth/google/callback"*/
 module.exports = eval(process.env.Auth_ENVIRONMENT) == undefined ? development : eval(process.env.Auth_ENVIRONMENT);

@@ -7,9 +7,9 @@ const queue = require('./kue');
 const loginworker = require('../worker/loginworker');
 const env = require('./environment');
 passport.use(new googleStrategy({
-    clientID: env.google_client_id,
-    clientSecret: env.google_secret,
-    callbackURL: env.google_callback,
+    clientID: env.clientID,
+    clientSecret: env.clientSecret,
+    callbackURL: env.callbackURL,
 }, async (accessToken, refreshToken, profile, done) => {
     try {
         // Find user
