@@ -34,7 +34,7 @@ const development = {
     },
     clientID: '33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: 'http://gavaskar.authsec.ninja/user/auth/google/callback',
+    callbackURL: 'http://http://gavaskar.authsec.ninja/user/auth/google/callback',
     morgan:{
         mode:'dev',
         options:{
