@@ -76,7 +76,7 @@ export SECRETKEY="hackmygirlsheartyoubro"
 export DATABASE="auth_production"
 export EMAIL="gavaskark@outlook.com"
 export EMAILPASS="Gava050220#"
-export GOOGLE_CLIENT="33502072642-kjgocms4qbvu85u9107o1k2dp3qd7lmu.apps.googleusercontent.com"
-export GOOGLE_SECRET="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"
+export GOOGLE_CLIENT="905704223373-k1bmui65ldvj3jl5llod85o2utedr3jo.apps.googleusercontent.com"
+export GOOGLE_SECRET="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"
 export GOOGLE_CALLBACK="http://gavaskar.authsec.ninja/user/auth/google/callback"*/
 module.exports = eval(process.env.Auth_ENVIRONMENT) == undefined ? development : eval(process.env.Auth_ENVIRONMENT);
