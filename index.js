@@ -12,7 +12,7 @@ console.log(env.db, 'database');
 const expressLayout = require('express-ejs-layouts');
 //database
 const db = require('./config/mongoose');
-
+console.log('callback',env.callbackURL)
 const session = require('express-session');
 const passport = require('passport');
 const localStrategy = require('./config/passport-local-strategy');
